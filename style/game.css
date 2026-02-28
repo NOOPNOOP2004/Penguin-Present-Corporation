@@ -1,0 +1,349 @@
+/* Стили для страницы с игрой */
+
+.game-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Контейнер игры */
+.game-container {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок игры */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.game-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat i {
+    color: #f39c12;
+}
+
+.stat span {
+    font-weight: 600;
+    color: #e74c3c;
+}
+
+/* Кнопки управления */
+.game-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.game-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    background: #e9ecef;
+    color: #2c3e50;
+}
+
+.game-btn:hover {
+    background: #dee2e6;
+    transform: translateY(-2px);
+}
+
+.game-btn i {
+    font-size: 1rem;
+}
+
+.game-btn.large {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #f39c12, #e74c3c);
+    color: white;
+    margin: 1rem auto 0;
+}
+
+.game-btn.large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+}
+
+/* Область игры */
+.game-area-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+    cursor: pointer;
+}
+
+/* Оверлей игры */
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    backdrop-filter: blur(3px);
+}
+
+.overlay-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 1rem;
+}
+
+.overlay-content h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: none;
+    display: block;
+}
+
+.overlay-content p {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+}
+
+/* Инструкции */
+.game-instructions {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.instruction {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.instruction i {
+    color: #f39c12;
+    font-size: 1.2rem;
+}
+
+/* Секция с купонами */
+.coupons-section {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.coupons-section h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.coupons-section h2 i {
+    color: #f39c12;
+}
+
+/* Карточки купонов */
+.coupon-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-left: 4px solid #cd7f32;
+    animation: slideIn 0.5s ease;
+}
+
+.coupon-card.silver {
+    border-left-color: #C0C0C0;
+}
+
+.coupon-card.gold {
+    border-left-color: #FFD700;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.coupon-icon {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coupon-icon i {
+    font-size: 2rem;
+    color: #cd7f32;
+}
+
+.silver .coupon-icon i {
+    color: #C0C0C0;
+}
+
+.gold .coupon-icon i {
+    color: #FFD700;
+}
+
+.coupon-info {
+    flex: 1;
+}
+
+.coupon-info h3 {
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.coupon-info p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.coupon-code {
+    background: #2c3e50;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.coupon-info-text {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #6c757d;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.coupon-info-text i {
+    color: #f39c12;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .game-main {
+        grid-template-columns: 1fr;
+    }
+
+    .game-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-main {
+        padding: 1rem;
+    }
+
+    .game-stats {
+        gap: 0.8rem;
+    }
+
+    .stat {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .game-instructions {
+        gap: 1rem;
+    }
+
+    .instruction {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .stat {
+        width: 100%;
+    }
+
+    .game-controls {
+        width: 100%;
+    }
+
+    .game-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Penguin - Вход и регистрация">
+    <meta property="og:description" content="Войдите или зарегистрируйтесь в мире ароматного кофе">
+    <meta property="og:image" content="assets\img\vid1.jpg">
+    <title>Penguin - Вход / Регистрация</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/auth.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div>
+            <div class="logo-container">
+                <img src="assets\img\vid1.jpg" alt="Penguin Logo" class="logo-img">
+                <h1>Penguin</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Главная</a></li>
+                    <li><a href="index.html#services">Наша продукция</a></li>
+                    <li><a href="index.html#contact">Купонь за мини игры</a></li>
+                    <li><a href="register.html" class="active">Вход</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="drink-offer">
+        <p>☕ Присоединяйтесь к клубу любителей кофе! ☕</p>
+    </div>
+
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="loginTab">Вход</button>
+                <button class="auth-tab" id="registerTab">Регистрация</button>
+            </div>
+
+            <!-- Форма входа -->
+            <div class="auth-form active" id="loginForm">
+                <div class="penguin-icon">
+                    <i class="fas fa-penguin"></i>
+                </div>
+                <h2>Добро пожаловать!</h2>
+                <p>Войдите, чтобы заказать любимый кофе</p>
+                
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </label>
+                        <input type="email" id="loginEmail" placeholder="penguin@coffee.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">
+                            <i class="fas fa-lock"></i>
+                            Пароль
+                        </label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox"> Запомнить меня
+                        </label>
+                        <a href="#" class="forgot-password">Забыли пароль?</a>
+                    </div>
+
+                    <button type="submit" class="auth-button">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Войти
+                    </button>
+                </form>
+
+                <div class="social-login">
+                    <p>Или войдите через:</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon vk"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social-icon yandex"><i class="fab fa-yandex"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Форма регистрации -->
+            <div class="auth-form" id="registerForm">
+                <div class="penguin-icon">
+                    <i class="fas fa-penguin"></i>
+                </div>
+                <h2>Создать аккаунт</h2>
+                <p>Станьте частью кофейной семьи пингвинов</p>
+                
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label for="regName">
+                            <i class="fas fa-user"></i>
+                            Имя
+                        </label>
+                        <input type="text" id="regName" placeholder="Имя пингвина" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regEmail">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </label>
+                        <input type="email" id="regEmail" placeholder="penguin@coffee.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPhone">
+                            <i class="fas fa-phone"></i>
+                            Телефон
+                        </label>
+                        <input type="tel" id="regPhone" placeholder="+7 (999) 123-45-67">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="regPassword">
+                                <i class="fas fa-lock"></i>
+                                Пароль
+                            </label>
+                            <input type="password" id="regPassword" placeholder="••••••••" required>
+                        </div>
+
+                        <div class="form-group half">
+                            <label for="regConfirmPassword">
+                                <i class="fas fa-lock"></i>
+                                Подтверждение
+                            </label>
+                            <input type="password" id="regConfirmPassword" placeholder="••••••••" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required> 
+                            Я согласен с <a href="#">условиями использования</a>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox"> 
+                            Хочу получать новости о скидках и новых напитках
+                        </label>
+                    </div>
+
+                    <button type="submit" class="auth-button register-button">
+                        <i class="fas fa-user-plus"></i>
+                        Зарегистрироваться
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Блок с преимуществами -->
+        <div class="auth-benefits">
+            <div class="benefit-card">
+                <i class="fas fa-coffee"></i>
+                <h3>Кофейные бонусы</h3>
+                <p>Каждая покупка приносит пингви-коины для бесплатного кофе</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-gift"></i>
+                <h3>Подарок за регистрацию</h3>
+                <p>Скидка 20% на первый заказ</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-truck"></i>
+                <h3>Бесплатная доставка</h3>
+                <p>При заказе от 500 рублей</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Penguin Coffee. Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Переключение между формами входа и регистрации
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginTab = document.getElementById('loginTab');
+            const registerTab = document.getElementById('registerTab');
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+
+            loginTab.addEventListener('click', function() {
+                loginTab.classList.add('active');
+                registerTab.classList.remove('active');
+                loginForm.classList.add('active');
+                registerForm.classList.remove('active');
+            });
+
+            registerTab.addEventListener('click', function() {
+                registerTab.classList.add('active');
+                loginTab.classList.remove('active');
+                registerForm.classList.add('active');
+                loginForm.classList.remove('active');
+            });
+
+            // Обработка отправки форм (для демонстрации)
+            document.getElementById('loginFormElement').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Вход выполнен! (демонстрация)');
+            });
+
+            document.getElementById('registerFormElement').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Регистрация прошла успешно! (демонстрация)');
+            });
+        });
+    </script>
+</body>
+</html>

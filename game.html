@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:title" content="Penguin - Купон за мини игры">
+    <meta property="og:description" content="Помоги пингвину забраться на гору и получи купон на кофе!">
+    <meta property="og:image" content="assets\icons\vid1.jpg">
+    <title>Penguin - Мини игра: Пингвин-скалолаз</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/game.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div>
+            <div class="logo-container">
+                <img src="assets\icons\vid1.jpg" alt="Penguin Logo" class="logo-img">
+                <h1>Penguin</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#services">Наша продукция</a></li>
+                    <li><a href="game.html" class="active">Купон за мини игры</a></li>
+                    <li><a href="register.html">Вход</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="drink-offer">
+        <p>🎮 Выиграй купон на бесплатный кофе! 🎮</p>
+    </div>
+
+    <main class="game-main">
+        <div class="game-container">
+            <div class="game-header">
+                <div class="game-stats">
+                    <div class="stat">
+                        <i class="fas fa-mountain"></i>
+                        <span>Высота: <span id="height">0</span>м</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span>Очки: <span id="score">0</span></span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-trophy"></i>
+                        <span>Рекорд: <span id="record">0</span>м</span>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button id="startBtn" class="game-btn">
+                        <i class="fas fa-play"></i> Старт
+                    </button>
+                    <button id="resetBtn" class="game-btn">
+                        <i class="fas fa-redo"></i> Сброс
+                    </button>
+                </div>
+            </div>
+
+            <div class="game-area-wrapper">
+                <canvas id="gameCanvas" width="800" height="500"></canvas>
+                <div class="game-overlay" id="gameOverlay">
+                    <div class="overlay-content">
+                        <h2 id="overlayTitle">Готов к восхождению?</h2>
+                        <p id="overlayMessage">Нажимай пробел или кликай по экрану, чтобы пингвин прыгал!</p>
+                        <button id="overlayBtn" class="game-btn large">
+                            <i class="fas fa-play"></i> Начать игру
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-instructions">
+                <div class="instruction">
+                    <i class="fas fa-space-shuttle"></i>
+                    <span>Пробел - прыжок</span>
+                </div>
+                <div class="instruction">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <span>Клик - прыжок</span>
+                </div>
+                <div class="instruction">
+                    <i class="fas fa-snowflake"></i>
+                    <span>Не падай!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок с купонами -->
+        <div class="coupons-section">
+            <h2><i class="fas fa-ticket-alt"></i> Твои купоны</h2>
+            
+            <div class="coupon-card" id="couponBronze" style="display: none;">
+                <div class="coupon-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <div class="coupon-info">
+                    <h3>Бронзовый купон</h3>
+                    <p>Скидка 10% на любой напиток</p>
+                    <div class="coupon-code" id="bronzeCode">PENGUIN10</div>
+                </div>
+            </div>
+
+            <div class="coupon-card silver" id="couponSilver" style="display: none;">
+                <div class="coupon-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <div class="coupon-info">
+                    <h3>Серебряный купон</h3>
+                    <p>Кофе в подарок при покупке двух</p>
+                    <div class="coupon-code" id="silverCode">PENGUIN2+1</div>
+                </div>
+            </div>
+
+            <div class="coupon-card gold" id="couponGold" style="display: none;">
+                <div class="coupon-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div class="coupon-info">
+                    <h3>Золотой купон</h3>
+                    <p>Любой напиток БЕСПЛАТНО!</p>
+                    <div class="coupon-code" id="goldCode">PENGUINFREE</div>
+                </div>
+            </div>
+
+            <div class="coupon-info-text">
+                <p><i class="fas fa-info-circle"></i> Достигни 50м - бронза, 100м - серебро, 200м - золото!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Penguin Coffee. Все права защищены.</p>
+    </footer>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
