@@ -1,2 +1,2 @@
 # Penguin Present Corporation
-# Penguin Present Corporation
+Что-то для кого-то, проект является не комерчиским, поэтому творю че хочу
