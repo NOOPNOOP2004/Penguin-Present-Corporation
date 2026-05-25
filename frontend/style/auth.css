@@ -1,0 +1,66 @@
+/* Уведомления */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+    animation: slideInRight 0.3s ease;
+}
+
+.notification.success {
+    border-left: 4px solid #2ecc71;
+}
+
+.notification.success i {
+    color: #2ecc71;
+}
+
+.notification.error {
+    border-left: 4px solid #e74c3c;
+}
+
+.notification.error i {
+    color: #e74c3c;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Профиль дропдаун */
+.profile-dropdown {
+    position: absolute;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+    min-width: 150px;
+    z-index: 100;
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #2c3e50 !important;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.profile-dropdown a:hover {
+    background: #f8f9fa;
+    color: #f39c12 !important;
+}

@@ -174,6 +174,37 @@
     font-size: 1.2rem;
 }
 
+/* Легенда типов платформ */
+.platform-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #2c3e50;
+}
+
+.legend-color {
+    width: 24px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.legend-color.normal { background: #8B4513; }
+.legend-color.moving { background: #4CAF50; }
+.legend-color.broken { background: #9E9E9E; }
+.legend-color.disappearing { background: #E91E63; }
+
 /* Секция с купонами */
 .coupons-section {
     background: white;
@@ -227,6 +258,16 @@
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+@keyframes couponGlow {
+    0% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(243, 156, 18, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); }
+}
+
+.coupon-card.new {
+    animation: couponGlow 0.5s ease 3;
 }
 
 .coupon-icon {
@@ -326,6 +367,20 @@
     .instruction {
         font-size: 0.9rem;
     }
+    
+    .platform-legend {
+        gap: 0.8rem;
+        border-radius: 20px;
+    }
+    
+    .legend-item {
+        font-size: 0.7rem;
+    }
+    
+    .legend-color {
+        width: 18px;
+        height: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -346,4 +401,35 @@
         flex: 1;
         justify-content: center;
     }
+}
+
+/* Добавьте в конец файла style/game.css */
+
+/* Платиновый купон */
+.coupon-card.platinum {
+    border-left-color: #E5E4E2;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+}
+
+.coupon-card.platinum .coupon-icon i {
+    color: #E5E4E2;
+    text-shadow: 0 0 5px rgba(229, 228, 226, 0.5);
+}
+
+.coupon-card.platinum .coupon-info h3 {
+    background: linear-gradient(135deg, #a0a0a0, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Анимация для платинового купона */
+@keyframes platinumGlow {
+    0% { box-shadow: 0 0 0 0 rgba(229, 228, 226, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(229, 228, 226, 0.3); }
+    100% { box-shadow: 0 0 0 0 rgba(229, 228, 226, 0); }
+}
+
+.coupon-card.platinum.new {
+    animation: platinumGlow 0.5s ease 3;
 }

@@ -66,7 +66,7 @@
                 <div class="game-overlay" id="gameOverlay">
                     <div class="overlay-content">
                         <h2 id="overlayTitle">Готов к восхождению?</h2>
-                        <p id="overlayMessage">Нажимай пробел или кликай по экрану, чтобы пингвин прыгал!</p>
+                        <p id="overlayMessage">Нажимай ПРОБЕЛ или КЛИКАЙ, чтобы прыгать!</p>
                         <button id="overlayBtn" class="game-btn large">
                             <i class="fas fa-play"></i> Начать игру
                         </button>
@@ -84,9 +84,21 @@
                     <span>Клик - прыжок</span>
                 </div>
                 <div class="instruction">
+                    <i class="fas fa-arrow-left"></i>
+                    <i class="fas fa-arrow-right"></i>
+                    <span>← → движение</span>
+                </div>
+                <div class="instruction">
                     <i class="fas fa-snowflake"></i>
                     <span>Не падай!</span>
                 </div>
+            </div>
+
+            <div class="platform-legend">
+                <div class="legend-item"><div class="legend-color normal"></div><span>Обычная</span></div>
+                <div class="legend-item"><div class="legend-color moving"></div><span>Движущаяся</span></div>
+                <div class="legend-item"><div class="legend-color broken"></div><span>Ломающаяся</span></div>
+                <div class="legend-item"><div class="legend-color disappearing"></div><span>Исчезающая</span></div>
             </div>
         </div>
 
@@ -127,8 +139,19 @@
                 </div>
             </div>
 
+            <div class="coupon-card platinum" id="couponPlatinum" style="display: none;">
+                <div class="coupon-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <div class="coupon-info">
+                    <h3>Платиновый купон</h3>
+                    <p>💎 Набор из 3 любых напитков БЕСПЛАТНО! 💎</p>
+                    <div class="coupon-code" id="platinumCode">PENGUINPREMIUM</div>
+                </div>
+            </div>
+
             <div class="coupon-info-text">
-                <p><i class="fas fa-info-circle"></i> Достигни 50м - бронза, 100м - серебро, 200м - золото!</p>
+                <p><i class="fas fa-info-circle"></i> Достигни 1000м - бронза, 2000м - серебро, 4000м - золото, 8000м - платина!</p>
             </div>
         </div>
     </main>
@@ -137,6 +160,8 @@
         <p>&copy; 2025 Penguin Coffee. Все права защищены.</p>
     </footer>
 
+    <!-- Подключаем скрипты в правильном порядке -->
+    <script src="js/auth.js"></script>
     <script src="js/game.js"></script>
 </body>
 </html>
